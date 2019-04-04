@@ -2,40 +2,70 @@ package com.android.goalgeta2.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class Data {
-    @SerializedName("success")
-    private boolean success;
+
     @SerializedName("user")
-    User UserObject;
+        User UserObject;
+        @SerializedName("goals")
+        ArrayList<Goal> goals = new ArrayList <Goal> ();
+    @SerializedName("success")
+        private boolean success;
+    @SerializedName("message")
+        private String message;
     @SerializedName("token")
-    private String token;
+        private String token;
 
 
-    // Getter Methods
+        // Getter Methods
 
-    public boolean getSuccess() {
-        return success;
+        public boolean getSuccess() {
+            return success;
+        }
+
+        public void setSuccess(boolean success) {
+            this.success = success;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+
+    public ArrayList<Goal> getGoals() {
+        return goals;
     }
 
-    public User getUser() {
-        return UserObject;
-    }
 
-    public String getToken() {
-        return token;
+
+    public void setUserObject(User userObject) {
+        UserObject = userObject;
     }
 
     // Setter Methods
 
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
+        public User getUser() {
+            return UserObject;
+        }
 
-    public void setUser(User userObject) {
-        this.UserObject = userObject;
-    }
+        public void setUser(User userObject) {
+            this.UserObject = userObject;
+        }
 
-    public void setToken(String token) {
-        this.token = token;
-    }
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
+
+
+        public void setGoals(ArrayList<Goal> goals) {
+            this.goals = goals;
+        }
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:id="@+id/update_profile_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="300dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit User Profile"
+            android:fontFamily="@font/adamina"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/update_editusername"
+                android:textColorHint="@color/main_color"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:fontFamily="@font/adamina"
+                android:layout_marginTop="30dp"
+                android:drawablePadding="16dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/main_color"
+                android:background="@drawable/grey_edit_text"
+                android:hint="@string/username" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/update_editemail"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:fontFamily="@font/adamina"
+                android:layout_marginTop="15dp"
+                android:drawablePadding="16dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/main_color"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/grey_edit_text"
+                android:hint="@string/email" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/update_editphone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:fontFamily="@font/adamina"
+                android:layout_marginTop="15dp"
+                android:drawablePadding="16dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/main_color"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/grey_edit_text"
+                android:hint="@string/phone" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/save_profile_btn"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/adamina"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/fade_btn_color"
+            android:text="save"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+</ScrollView>

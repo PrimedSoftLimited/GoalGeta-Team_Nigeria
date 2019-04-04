@@ -14,10 +14,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.EditGoals"></activity>
+        <activity android:name=".activities.UpdateUser" />
+        <activity
+            android:name=".Dashboard"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.Task" />
+        <activity
+            android:name=".activities.CreateGoals"
+            android:label="@string/title_activity_create_goals"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.Goals"
+            android:label="@string/title_activity_goals"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Goals"
             android:label="@string/title_activity_goals"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.Profile" />
         <activity
             android:name=".activities.Dashboard"

@@ -47,11 +47,12 @@
                 <AutoCompleteTextView
                     android:id="@+id/signin_email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:drawablePadding="16dp"
+                    android:paddingLeft="16dp"
                     android:fontFamily="@font/adamina"
                     android:textColor="@color/main_color"
-                    android:background="@drawable/grey_edit_text"
+                    android:background="@drawable/fade_btn_color"
                     android:inputType="textEmailAddress"
                     android:hint="@string/email"/>
             </android.support.design.widget.TextInputLayout>
@@ -65,11 +66,12 @@
                     android:id="@+id/signin_password"
                     android:textColorHint="@color/main_color"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:fontFamily="@font/adamina"
+                    android:paddingLeft="16dp"
                     android:drawablePadding="16dp"
                     android:textColor="@color/main_color"
-                    android:background="@drawable/grey_edit_text"
+                    android:background="@drawable/fade_btn_color"
                     android:inputType="textWebPassword"
                     android:hint="@string/password"/>
             </android.support.design.widget.TextInputLayout>
@@ -90,7 +92,8 @@
                 android:fontFamily="@font/adamina"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/fade_btn_color"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_color"
                 android:text="@string/signin"/>
 
         </LinearLayout>

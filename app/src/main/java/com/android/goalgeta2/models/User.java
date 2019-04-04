@@ -1,7 +1,7 @@
 package com.android.goalgeta2.models;
 
 public class User {
-    private int id;
+    private  int id;
     private String name;
     private String email;
     private String phone_number;

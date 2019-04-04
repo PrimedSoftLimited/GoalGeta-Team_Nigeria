@@ -12,19 +12,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
-                android:src="@drawable/agreement"
+                android:src="@mipmap/agreement"
                 android:scaleType="centerCrop" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/i_can"
+                android:fitsSystemWindows="true"
+                android:src="@mipmap/i_can"
                 android:scaleType="centerCrop" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/achieve"
+                android:fitsSystemWindows="true"
+                android:src="@mipmap/achieve"
                 android:scaleType="centerCrop" />
 
         </ViewFlipper>

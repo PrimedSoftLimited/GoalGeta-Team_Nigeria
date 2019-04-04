@@ -21,7 +21,6 @@ import com.android.goalgeta2.storage.SharedPrefManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -205,48 +204,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    private void userSignin() {
-
-        String email = myEmail.getText().toString().trim();
-        String password = myPassword.getText().toString().trim();
-
-        mProgress = findViewById(R.id.login_progress);
-        mProgress.setVisibility(View.VISIBLE);
-
-            Call<ResponseObb> call = RetrofitClient.getInstance().getApi().login(email, password);
-            call.enqueue(new Callback<ResponseObb>() {
-                @Override
-                public void onResponse(Call<ResponseObb> call, Response<ResponseObb> response) {
-
-                    ResponseObb loginResponse = response.body();
-                    if (response.code() == 200) {
-//                    proceed with login
-                        Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
-                        String token = loginResponse.getData().getToken();
-
-                        Intent dashboard = new Intent(MainActivity.this, Dashboard.class);
-                        dashboard.putExtra("token", token);
-                        startActivity(dashboard);
-                        mProgress.setVisibility(View.INVISIBLE);
-
-                        //     startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                        //     token = response.body().getToken().header("Authorization", token);
-
-//                    Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                    } else {
-                        Toast.makeText(getApplicationContext(), String.valueOf(loginResponse.getData().getSuccess()), Toast.LENGTH_LONG).show();
-                        mProgress.setVisibility(View.INVISIBLE);
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ResponseObb> call, Throwable t) {
-                    Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
-                    mProgress.setVisibility(View.INVISIBLE);
-                }
-            });
-        }
+//    private void userSignin() {
+//
+//        String email = myEmail.getText().toString().trim();
+//        String password = myPassword.getText().toString().trim();
+//
+//        mProgress = findViewById(R.id.login_progress);
+//        mProgress.setVisibility(View.VISIBLE);
+//
+//            Call<ResponseObb> call = RetrofitClient.getInstance().getApi().login(email, password);
+//            call.enqueue(new Callback<ResponseObb>() {
+//                @Override
+//                public void onResponse(Call<ResponseObb> call, Response<ResponseObb> response) {
+//
+//                    ResponseObb loginResponse = response.body();
+//                    if (response.code() == 200) {
+////                    proceed with login
+//                        Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+//                        String token = loginResponse.getData().getToken();
+//
+//                        Intent dashboard = new Intent(MainActivity.this, Dashboard.class);
+//                        dashboard.putExtra("token", token);
+//                        startActivity(dashboard);
+//                        mProgress.setVisibility(View.INVISIBLE);
+//
+//                        //     startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+//                        //     token = response.body().getToken().header("Authorization", token);
+//
+////                    Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+////                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//
+//                    } else {
+//                        Toast.makeText(getApplicationContext(), String.valueOf(loginResponse.getData().getSuccess()), Toast.LENGTH_LONG).show();
+//                        mProgress.setVisibility(View.INVISIBLE);
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<ResponseObb> call, Throwable t) {
+//                    Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+//                    mProgress.setVisibility(View.INVISIBLE);
+//                }
+//            });
+//        }
 
 }

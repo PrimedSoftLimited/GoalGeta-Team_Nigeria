@@ -16,6 +16,7 @@ public class SharedPrefManager {
     private static final String PHONE_NO = "phone_number";
     private static final String CREATED = "created_at";
     private static final String UPDATED = "updated_at";
+    private static final String TOKEN = "token";
 
 
     private Context mCtx;
@@ -47,6 +48,7 @@ public class SharedPrefManager {
             editor.putString("phone_number", user.getPhone_number());
             editor.putString("created_at", user.getCreated_at());
             editor.putString("updated_at", user.getUpdated_at());
+
 
             editor.apply();
         }

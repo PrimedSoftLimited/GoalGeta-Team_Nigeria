@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:id="@+id/edit_goal_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="300dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Goal"
+            android:fontFamily="@font/adamina"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_goalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@drawable/fade_btn_color"
+                android:paddingLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:hint="Your Goal Title" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_goalDescription"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:paddingLeft="16dp"
+                android:background="@drawable/fade_btn_color"
+                android:textColor="@color/white"
+                android:layout_marginTop="24dp"
+                android:hint="Describe your goal" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/edit_startGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:hint="Select Start Date"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/white"
+                android:background="@drawable/fade_btn_color"/>
+
+            <EditText
+                android:id="@+id/edit_endGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingLeft="16dp"
+                android:background="@drawable/fade_btn_color"
+                android:textColor="@color/white"
+                android:paddingRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:hint="Select End Date" />
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_goalCompletion_status"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/white"
+                android:background="@drawable/fade_btn_color"
+                android:layout_marginTop="24dp"
+                android:hint="Completion Status" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/save_goal_btn"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/adamina"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/fade_btn_color"
+            android:text="save"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,8 +1,10 @@
 package com.android.goalgeta2.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,15 +16,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Profile extends AppCompatActivity implements View.OnClickListener {
+public class Profile extends AppCompatActivity {
 
     String token;
     TextView profUserName, profEMail, profPhoneNo;
+    Button updateProf, deleteProf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+//        ActionBar actionBar = this.getSupportActionBar();
+//        if (actionBar != null){
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//        }
 
 //      get token from login
         token = getIntent().getStringExtra("token");
@@ -31,28 +39,21 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         profUserName = (TextView) findViewById(R.id.username_text);
         profEMail = (TextView) findViewById(R.id.email_text);
         profPhoneNo = (TextView) findViewById(R.id.phone_text);
+        updateProf = findViewById(R.id.edit_prof);
+        deleteProf = findViewById(R.id.delete_prof);
+
+        updateProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profIntent = new Intent(Profile.this, UpdateUser.class);
+                profIntent.putExtra("token", token);
+                startActivity(profIntent);
+            }
+        });
 
         fullProfile();
     }
 
-    /**
-     * Called when a view has been clicked.
-     *
-     * @param v The view that was clicked.
-     */
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.username_edit:
-                break;
-            case R.id.email_edit:
-                break;
-            case R.id.phone_edit:
-                break;
-            case R.id.delete_prof:
-                break;
-        }
-    }
 
     private void fullProfile(){
 
