@@ -89,7 +89,6 @@ public class UpdateUser extends AppCompatActivity {
                 if (response.code() == 200){
 
 //                    SharedPrefManager.getInstance(getParent()).
-                    token = response.body().getData().getToken();
                     Toast.makeText(UpdateUser.this, "Profile Updated", Toast.LENGTH_LONG).show();
                     updateProgress.setVisibility(View.INVISIBLE);
                 } else {

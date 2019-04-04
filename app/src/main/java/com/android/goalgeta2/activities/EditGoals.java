@@ -163,8 +163,13 @@ public class EditGoals extends AppCompatActivity {
         call.enqueue(new Callback<GoalResponse>() {
             @Override
             public void onResponse(Call call, Response response) {
-                Toast.makeText(EditGoals.this, response.message(), Toast.LENGTH_LONG).show();
-                updateGoalsProgress.setVisibility(View.INVISIBLE);
+               if (response.code() == 200){
+                   Toast.makeText(EditGoals.this, response.message(), Toast.LENGTH_LONG).show();
+                   updateGoalsProgress.setVisibility(View.INVISIBLE);
+               } else {
+                   Toast.makeText(EditGoals.this, "Unable to Update goal", Toast.LENGTH_LONG).show();
+                   updateGoalsProgress.setVisibility(View.INVISIBLE);
+               }
 
             }
 
