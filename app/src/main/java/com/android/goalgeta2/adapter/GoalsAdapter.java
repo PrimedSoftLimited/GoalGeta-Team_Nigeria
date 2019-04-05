@@ -3,7 +3,6 @@ package com.android.goalgeta2.adapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +18,7 @@ import com.android.goalgeta2.activities.EditGoals;
 import com.android.goalgeta2.api.RetrofitClient;
 import com.android.goalgeta2.models.Goal;
 import com.android.goalgeta2.models.GoalResponse;
+import com.android.goalgeta2.storage.SharedPrefManager;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.GoalsViewHol
     private Context mCtx;
     private ArrayList<Goal> goals;
     public String token;
-    public SharedPreferences preferences;
+    public SharedPrefManager prefManager;
     private Goal mRecentlyDeletedItem;
     int mRecentlyDeletedItemPosition;
 
@@ -70,8 +70,8 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.GoalsViewHol
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 id = (int) model.getId();
-                                token = preferences.getString("token", "");
-                                Call<GoalResponse> call = RetrofitClient.getInstance().getApi().goalsDelete("token", id);
+                                token = prefManager.getUser().getToken();
+                                Call<GoalResponse> call = RetrofitClient.getInstance().getApi().goalsDelete(token, id);
                                 call.enqueue(new Callback<GoalResponse>() {
                                     @Override
                                     public void onResponse(Call<GoalResponse> call, Response<GoalResponse> response) {
@@ -95,7 +95,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.GoalsViewHol
                                 final Intent intent = new Intent(mCtx, EditGoals.class);
                                 intent.putExtra("token", token);
                                 mCtx.startActivity(intent);
-                                goalsViewHolder.goalTitle.setText("Edit Goal");
+//                                goalsViewHolder.goalTitle.setText("Edit Goal");
                             }
                         });
 //                Create and show Alert dialog

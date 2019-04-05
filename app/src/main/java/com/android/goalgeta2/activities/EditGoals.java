@@ -1,6 +1,8 @@
 package com.android.goalgeta2.activities;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import com.android.goalgeta2.R;
 import com.android.goalgeta2.api.RetrofitClient;
 import com.android.goalgeta2.models.GoalResponse;
+import com.android.goalgeta2.storage.SharedPrefManager;
 
 import java.util.Calendar;
 
@@ -27,6 +30,8 @@ public class EditGoals extends AppCompatActivity {
 
     private EditText editTextGoal, editTextDescription, editTextProgress, editTextStart, editTextFinish;
     private Button saveChangedGoals;
+    SharedPrefManager sharedPrefManager;
+    SharedPreferences preferences;
     String token;
     private ProgressBar updateGoalsProgress;
     private static final String TAG = "UpdateGoals";
@@ -156,7 +161,7 @@ public class EditGoals extends AppCompatActivity {
         }
 
         updateGoalsProgress.setVisibility(View.VISIBLE);
-        token = getIntent().getStringExtra("token");
+        token = sharedPrefManager.getUser().getToken();
         Call<GoalResponse> call = RetrofitClient.getInstance().getApi().updateGoals(token, edit_goal_title, edit_goal_description,
                 edit_goal_start, edit_goal_finish, edit_goal_completion);
 
@@ -166,6 +171,8 @@ public class EditGoals extends AppCompatActivity {
                if (response.code() == 200){
                    Toast.makeText(EditGoals.this, response.message(), Toast.LENGTH_LONG).show();
                    updateGoalsProgress.setVisibility(View.INVISIBLE);
+                   Intent backIntent = new Intent(EditGoals.this, Dashboard.class);
+                   startActivity(backIntent);
                } else {
                    Toast.makeText(EditGoals.this, "Unable to Update goal", Toast.LENGTH_LONG).show();
                    updateGoalsProgress.setVisibility(View.INVISIBLE);

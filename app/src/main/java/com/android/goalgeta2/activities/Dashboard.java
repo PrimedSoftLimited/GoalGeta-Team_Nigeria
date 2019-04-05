@@ -44,8 +44,6 @@ public class Dashboard extends AppCompatActivity
     private ArrayList<Goal> goals = new ArrayList<>();
     private GoalsAdapter mAdapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

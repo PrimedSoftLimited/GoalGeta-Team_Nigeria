@@ -48,6 +48,7 @@ public class SharedPrefManager {
             editor.putString("phone_number", user.getPhone_number());
             editor.putString("created_at", user.getCreated_at());
             editor.putString("updated_at", user.getUpdated_at());
+            editor.putString("token", user.getToken());
 
 
             editor.apply();
@@ -65,12 +66,13 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return new User(
                 sharedPreferences.getInt(ID, 0),
-                sharedPreferences.getString(EMAIL, null),
-                sharedPreferences.getString(NAME, null),
-                sharedPreferences.getString(PHONE_NO, null),
-                sharedPreferences.getString(CREATED, null),
-                sharedPreferences.getString(UPDATED, null)
-                );
+                sharedPreferences.getString(EMAIL, ""),
+                sharedPreferences.getString(NAME, ""),
+                sharedPreferences.getString(PHONE_NO, ""),
+                sharedPreferences.getString(CREATED, ""),
+                sharedPreferences.getString(UPDATED, ""),
+                sharedPreferences.getString(TOKEN, "")
+        );
     }
 
     public boolean logout(){

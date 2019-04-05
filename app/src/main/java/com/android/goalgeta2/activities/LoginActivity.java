@@ -33,6 +33,7 @@ import android.widget.Toast;
 import com.android.goalgeta2.R;
 import com.android.goalgeta2.api.RetrofitClient;
 import com.android.goalgeta2.models.ResponseObb;
+import com.android.goalgeta2.storage.SharedPrefManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +70,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private ProgressBar mProgressView;
+    SharedPrefManager prefManager;
     private View mLoginFormView;
     final Context context = this;
 

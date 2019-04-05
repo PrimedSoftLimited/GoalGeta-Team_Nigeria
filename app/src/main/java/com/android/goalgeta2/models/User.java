@@ -7,14 +7,16 @@ public class User {
     private String phone_number;
     private String created_at;
     private String updated_at;
+    private String token;
 
-    public User(int id, String name, String email, String phone_number, String created_at, String updated_at) {
+    public User(int id, String name, String email, String phone_number, String created_at, String updated_at,String token) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone_number = phone_number;
         this.created_at = created_at;
         this.updated_at = updated_at;
+        this.token = token;
     }
     // Getter Methods
 
@@ -42,6 +44,9 @@ public class User {
         return updated_at;
     }
 
+    public String getToken(){
+        return token;
+    }
     // Setter Methods
 
     public void setId(int id) {
@@ -66,5 +71,9 @@ public class User {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public void setToken(String token){
+        this.token = token;
     }
 }
